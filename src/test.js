@@ -6,7 +6,7 @@ import { arweave } from './arweave.js'
 const encode = obj => JSON.stringify(obj)
 const decode = obj => JSON.parse(obj)
 
-test('Should fail when data is fetched with arweave.getData() method', async t => {
+test('arweave.getData() should return data matching that of the data uploaded', async t => {
   // Setup
   await arlocal.start()
   const key = await arweave.wallets.generate()
@@ -32,7 +32,7 @@ test('Should fail when data is fetched with arweave.getData() method', async t =
     .getData(tx.id, opts)
     .then(data => decode(data))
     .catch(console.error)
-  t.notDeepEqual(data, failure)
+  t.deepEqual(data, failure)
 })
 
 test.after.always(async () => {
