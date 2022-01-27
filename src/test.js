@@ -30,7 +30,7 @@ test('Should fail when data is fetched with arweave.getData() method', async t =
   const opts = { decode: true, string: true }
   const failure = await arweave.transactions
     .getData(tx.id, opts)
-    .then(({ data }) => decode(data))
+    .then(data => decode(data))
     .catch(console.error)
   t.notDeepEqual(data, failure)
 })
