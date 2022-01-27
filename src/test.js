@@ -4,6 +4,7 @@ import { arlocal } from './arlocal.js'
 import { arweave } from './arweave.js'
 
 const encode = obj => JSON.stringify(obj)
+const decode = obj => JSON.parse(obj)
 
 test('Should fail when data is fetched with arweave.getData() method', async t => {
   // Setup
@@ -26,10 +27,11 @@ test('Should fail when data is fetched with arweave.getData() method', async t =
   t.deepEqual(data, success)
 
   // This doesn't
-  const failure = await arweave.transactions.getData(tx.id, {
-    decode: true,
-    string: true,
-  })
+  const opts = { decode: true, string: true }
+  const failure = await arweave.transactions
+    .getData(tx.id, opts)
+    .then(({ data }) => decode(data))
+    .catch(console.error)
   t.notDeepEqual(data, failure)
 })
 
