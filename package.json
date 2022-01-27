@@ -1,0 +1,28 @@
+{
+  "name": "arlocal-issue-63",
+  "version": "0.0.1",
+  "description": "A reproduction of https://github.com/textury/arlocal/issues/63",
+  "type": "module",
+  "main": "./src/index.js",
+  "repository": "https://github.com/handlebauer/arlocal-issue-63.git",
+  "author": "Donald Geddes <hi@donaldgeddes.ca>",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
+  "prettier": "@hbauer/prettier-config",
+  "eslintConfig": {
+    "extends": "@hbauer/eslint-config"
+  },
+  "devDependencies": {
+    "@hbauer/eslint-config": "^1.2.1",
+    "@hbauer/prettier-config": "^1.1.0",
+    "arlocal": "^1.1.19",
+    "ava": "^4.0.1",
+    "eslint": "^8.7.0",
+    "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "arweave": "^1.10.23"
+  }
+}
