@@ -17,7 +17,7 @@
   "devDependencies": {
     "@hbauer/eslint-config": "^1.2.1",
     "@hbauer/prettier-config": "^1.1.0",
-    "arlocal": "^1.1.19",
+    "arlocal": "^1.1.20",
     "ava": "^4.0.1",
     "eslint": "^8.7.0",
     "prettier": "^2.5.1"
